@@ -2,9 +2,14 @@
 const express = require('express');
 const app = express();
 const apiRouter = require('./routes/api');
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+
 
 mongoose.connect('mongodb://localhost/cats_api');
+
+
+app.use(bodyParser.json())
 
 
 app.use(function (req, res, next) {
