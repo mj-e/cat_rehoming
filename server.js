@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 
-mongoose.connect('mongodb://localhost/cats_api');
+mongoose.connect('mongodb://matt:Password@ds151060.mlab.com:51060/cat_rehoming');
 
 
 app.use(bodyParser.json())
@@ -24,7 +24,7 @@ app.use('/*', function (req, res) {
     res.status(404).send({reason: 'ROUTE NOT FOUND'})
 })
 
-app.listen(3000, function (error) {
+app.listen(process.env.PORT || 3000, function (error) {
     if (error) {
         return console.log(error);
     }

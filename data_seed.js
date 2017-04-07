@@ -16,7 +16,7 @@ const cats = [
   { name: 'kobe', ready_for_home: false, age: 3, personality: ['soft', 'boring', 'lazy']}
 ];
 
-mongoose.connect('mongodb://localhost/cats_api', function (error) {
+mongoose.connect('mongodb://matt:Password@ds151060.mlab.com:51060/cat_rehoming', function (error) {
   if (error) {
     console.log(error);
     return process.exit();
